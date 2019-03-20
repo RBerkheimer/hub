@@ -5,7 +5,9 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.0"]
                   [org.clojure/core.async "0.4.490"]
-                  [clj-time "0.15.0"]]
+                  [clj-time "0.15.0"]
+                  [http-kit "2.3.0"]
+                  [compojure "1.6.1"]]
   :main ^:skip-aot hub.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
