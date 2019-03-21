@@ -8,6 +8,7 @@
                   [clj-time "0.15.0"]
                   [http-kit "2.3.0"]
                   [compojure "1.6.1"]]
+  :resource-paths ["resources"]
   :main ^:skip-aot hub.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})

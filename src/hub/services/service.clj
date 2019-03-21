@@ -3,4 +3,4 @@
               [hub.services.log.service :as log])
     (:gen-class))
 
-(log/logger)
+(log/init)

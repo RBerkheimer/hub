@@ -9,6 +9,7 @@
 (def publication (async/pub publisher :topic))
 
 (defn prepare [topic content]
+    "Prepares a message by adding a unique id and a timestamp and converting a topic to a keyword"
     { :id (.toString (java.util.UUID/randomUUID))
       :timestamp (time/now)
       :topic (keyword topic)
@@ -17,7 +18,5 @@
 (defn publish [topic content]
     "Prepares and publishes a message in the central publisher"
     (let [message (prepare topic content)]
-        ;(async/go (async/>! publisher message))))
-        (async/put! publisher message)))
-
-(println "publication: " publication)
+        (async/put! publisher message)
+        '"success"))

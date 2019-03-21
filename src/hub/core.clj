@@ -1,11 +1,13 @@
 (ns hub.core
-    (:require   [hub.services.service :as svc]
-                [hub.services.message.service :refer [publish]])
+    (:require   [hub.web.server :as server]
+                [hub.services.service :as svc])
   (:gen-class))
 
 (defn -main
-  "Run the system during prototyping."
+  "Bootstrap system as a web server and expose endpoints for submission of data."
   [& args]
-  (let [m1 {:topic :log :content {:key1 "val1"}}]
-  (publish (:topic m1) (:content m1))
-  (println "Complete!")))
+  (server/run))
+
+  ;(let [m1 {:topic :log :content {:key1 "val1"}}]
+  ;(publish (:topic m1) (:content m1))
+  ;(println "Complete!")))
