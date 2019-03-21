@@ -30,4 +30,5 @@
         (async/put! publisher message)
         '"success"))
 
-(defn init [])
+(defn init []
+    (println "Started the message service."))

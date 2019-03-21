@@ -26,4 +26,5 @@
 
 (defn init []
     (init-logfile)
-    (startup subscriber log))
+    (startup subscriber log)
+    (println "Started the log service."))
