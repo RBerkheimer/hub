@@ -15,8 +15,19 @@
       :topic (keyword topic)
       :content content})
 
+(defn log-message [message]
+    (let [{:keys [id topic timestamp content]} message]
+        {:id id
+         :topic :log
+         :timestamp timestamp
+         :sourcetopic topic
+         :content content}))
+
 (defn publish [topic content]
     "Prepares and publishes a message in the central publisher"
     (let [message (prepare topic content)]
+        (async/put! publisher (log-message message))
         (async/put! publisher message)
         '"success"))
+
+(defn init [])
