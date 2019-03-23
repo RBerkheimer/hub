@@ -1,10 +1,16 @@
 # hub
 
-FIXME: description
+Hub is a small core-async (pubsub) based broadcasting processing system.
+Feed messages through the https service and hub will route them to where
+they are supposed to go.
+Hub routes all messages through a centralized log that can be replayed.
+Hub provides a sane way for system growth by using a tiered publication/subscription strategy.
+Message patterns follow the well established Kafka style messaging.
+
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Download from https://github.com/RBerkheimer/hub.
 
 ## Usage
 
