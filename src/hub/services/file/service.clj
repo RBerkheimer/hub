@@ -11,9 +11,7 @@
 (defn parse-file [message]
     "Reads a message and parses some data."
     (let [{:keys [content]} message]
-        (println "processing some files")
-        (futils/process)
-        (println "finished processing some files")))
+        (futils/process)))
 
 (defn init []
     (startup subscriber parse-file)
